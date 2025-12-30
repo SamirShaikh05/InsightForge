@@ -1,5 +1,7 @@
 # Node dependencies
 node_modules/
+automation/node_modules/
+
 
 # Environment variables
 .env
