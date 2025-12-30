@@ -2,7 +2,16 @@ import axios from "axios";
 import dotenv from "dotenv";
 import { scrapeExternalArticle } from "../backend/src/services/externalScraper.js";
 import { searchGoogle } from "../backend/src/services/googleSearch.js";
-dotenv.config({ path: "../backend/.env" });
+import { buildUpdatePrompt } from "../backend/src/services/promptBuilder.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({
+  path: path.resolve(__dirname, "../backend/.env")
+});
 
 
 console.log("SERP_API_KEY:", process.env.SERP_API_KEY);
@@ -36,5 +45,17 @@ async function fetchArticles() {
 
     console.log("Scraped external articles for:", article.title);
     console.log(scrapedContents.map(x => x.url));
+
+    const referenceTexts = scrapedContents.map(item => item.content);
+
+    const prompt = buildUpdatePrompt({
+      title: article.title,
+      originalContent: article.content,
+      referenceContents: referenceTexts
+    });
+
+    console.log("Prompt generated for:", article.title);
+    console.log(prompt.slice(0, 400), "...\n");
+
   }
 })();
