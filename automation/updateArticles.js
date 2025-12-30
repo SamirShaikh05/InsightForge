@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import { scrapeExternalArticle } from "../backend/src/services/externalScraper.js";
 import { searchGoogle } from "../backend/src/services/googleSearch.js";
 import { buildUpdatePrompt } from "../backend/src/services/promptBuilder.js";
+import { generateEnhancedContent } from "../backend/src/services/geminiClient.js";
+
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -14,8 +16,13 @@ dotenv.config({
 });
 
 
+
 console.log("SERP_API_KEY:", process.env.SERP_API_KEY);
 console.log("MONGO_URI loaded:", !!process.env.MONGO_URI);
+console.log("Gemini key loaded:", !!process.env.GEMINI_API_KEY);
+console.log("Gemini key length:", process.env.GEMINI_API_KEY?.length);
+
+
 
 
 const API_BASE = "http://localhost:3000/api/articles";
@@ -56,6 +63,12 @@ async function fetchArticles() {
 
     console.log("Prompt generated for:", article.title);
     console.log(prompt.slice(0, 400), "...\n");
+
+    const enhancedContent = await generateEnhancedContent(prompt);
+
+    console.log("Enhanced content for:", article.title);
+    console.log(enhancedContent.slice(0, 400), "...\n");
+
 
   }
 })();
