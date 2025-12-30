@@ -44,7 +44,7 @@ This phase is implemented as a standalone automation script and does not require
 
 ---
 
-## What Has Been Implemented ✅
+## What Has Been Implemented 
 
 ### 1. Article Fetching
 - Fetches existing articles from MongoDB
@@ -71,7 +71,7 @@ This phase is implemented as a standalone automation script and does not require
 
 ---
 
-## Current Status 🚧
+## Current Status 
 - Core automation logic is **fully functional**
 - Enhanced content is generated and logged successfully
 - Storing enhanced content back into the database is planned as a next step
