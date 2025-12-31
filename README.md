@@ -1,7 +1,41 @@
-# BeyondChats – Blog Scraper & Content Enhancement System
+# InsightForge – AI-Powered Blog Scraping & Content Enhancement System
 
-This project is developed as part of the **BeyondChats Full Stack Developer Intern Assignment**.  
-It is implemented in phases, following real-world backend, API, and automation practices.
+A full-stack system that scrapes blog articles, exposes REST APIs, and
+automatically enhances content using external references and AI.
+
+
+---
+
+## Project Architecture
+
+## Project Architecture Diagram
+
+```mermaid
+flowchart TD
+    A[Frontend<br/>React + Vite] -->|HTTP Requests| B[Backend API<br/>Express.js]
+
+    B -->|CRUD Operations| C[(MongoDB Atlas)]
+
+    D[Automation Script<br/>Node.js] -->|GET / PUT Articles| B
+
+    D -->|Search Queries| E[Google Search<br/>(SerpAPI)]
+    D -->|Content Enhancement| F[Google Gemini API]
+
+    E --> D
+    F --> D
+
+
+---
+
+```md
+### Architecture Overview
+- The frontend consumes REST APIs exposed by the backend to display blog articles.
+- The backend handles scraping, persistence, and CRUD operations using MongoDB.
+- A standalone automation script periodically enhances articles by:
+  - Fetching unprocessed articles
+  - Scraping external references via Google Search
+  - Enhancing content using the Gemini LLM
+  - Publishing updates back through the backend APIs
 
 ---
 
