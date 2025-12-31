@@ -89,6 +89,17 @@ This phase is implemented as a standalone automation script and uses the Phase 1
 
 ---
 
+## Execution Proof (Phase 2)
+
+### Automation Script Output
+![Automation Script Output](./screenshots/terminal-output.png)
+
+### MongoDB Updated Articles
+![MongoDB Atlas Updated Records](./screenshots/mongodb-atlas.png)
+
+
+---
+
 ## Project Status
 ✅ Phase 1 – Completed  
 ✅ Phase 2 – Completed  
