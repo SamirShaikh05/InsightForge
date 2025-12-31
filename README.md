@@ -3,31 +3,7 @@
 A full-stack system that scrapes blog articles, exposes REST APIs, and
 automatically enhances content using external references and AI.
 
-
 ---
-
-## Project Architecture
-
-## Project Architecture Diagram
-
-```mermaid
-flowchart TD
-    A[Frontend<br/>React + Vite] -->|HTTP Requests| B[Backend API<br/>Express.js]
-
-    B -->|CRUD Operations| C[(MongoDB Atlas)]
-
-    D[Automation Script<br/>Node.js] -->|GET / PUT Articles| B
-
-    D -->|Search Queries| E[Google Search<br/>(SerpAPI)]
-    D -->|Content Enhancement| F[Google Gemini API]
-
-    E --> D
-    F --> D
-...
-
-
----
-
 
 ### Architecture Overview
 - The frontend consumes REST APIs exposed by the backend to display blog articles.
@@ -38,9 +14,7 @@ flowchart TD
   - Enhancing content using the Gemini LLM
   - Publishing updates back through the backend APIs
 
-
 ---
-
 
 ## Phase 1 – Blog Scraping & REST API 
 
