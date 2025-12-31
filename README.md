@@ -23,11 +23,12 @@ flowchart TD
 
     E --> D
     F --> D
+...
 
 
 ---
 
-```md
+
 ### Architecture Overview
 - The frontend consumes REST APIs exposed by the backend to display blog articles.
 - The backend handles scraping, persistence, and CRUD operations using MongoDB.
@@ -37,7 +38,9 @@ flowchart TD
   - Enhancing content using the Gemini LLM
   - Publishing updates back through the backend APIs
 
+
 ---
+
 
 ## Phase 1 – Blog Scraping & REST API 
 
