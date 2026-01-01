@@ -20,7 +20,7 @@ export default function App() {
             <button onClick={() => setSelected(article)}>
               {article.title}
             </button>
-            {article.isUpdated && <span> ✅</span>}
+            {article.isUpdated && <span>(Updated)</span>}
           </li>
         ))}
       </ul>
