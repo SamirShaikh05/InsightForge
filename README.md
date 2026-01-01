@@ -119,12 +119,12 @@ To visually validate the backend APIs and AI-enhanced content, a minimal fronten
 ## Execution Proof (Frontend)
 
 ### Frontend UI – Article Viewer
-![Frontend UI](./screenshots/frontend.png)
+![Frontend UI](./screenshots/frontendUI.png)
 
 ---
 
 ### MongoDB Atlas – Updated Articles
-![MongoDB Atlas Updated Records](./screenshots/updatedArticles.png)
+![MongoDB Atlas Updated Records](./screenshots/updatedArticlesView.png)
 
 ---
 
